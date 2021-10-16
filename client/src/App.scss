@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+$blue: #1877f2;
+$green: #42b72a;
+
+$border-radius: 0;
+$paragraph-margin-bottom: 0;
+
+$gray-600: rgb(245, 245, 245);
+
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  background: #DB3F6F !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.user:hover, .user.selected {
+  background: #FBFAFB;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.message-input::placeholder, .info-text, .time {
+  color: rgba(0, 0, 0, .5);
+}
+
+.info-text {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.btn-transparent {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 4px 8px;
+}
+
+.btn-react {
+  margin-bottom: 35px;
+}
+
+.react-btn-popover {
+  padding: 0;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.react-icon-btn {
+  transition: .3s;
+
+  &:hover {
+    font-size: 24px;
+  }
+}
+
+.reactions {
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+}
+
+small.time {
+  margin-top: 14px;
+  display: inline-block;
+}
+
+.users-box {
+  height: 78vh;
+  overflow-y: auto;
+}
+
+.chat-box {
+  height: 78vh;
+}
+
+.chat-box .d-flex.flex-column-reverse {
+  height: 68vh;
+  overflow-y: scroll;
+}

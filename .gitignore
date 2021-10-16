@@ -1,0 +1,10 @@
+/node_modules
+/client/node_modules
+/client/build
+/.idea
+/client/yarn.lock
+/client/.env
+.env
+yarn.lock
+package-lock.json
+yarn-error.log
