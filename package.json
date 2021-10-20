@@ -20,7 +20,7 @@
     "subscriptions-transport-ws": "^0.9.19"
   },
   "scripts": {
-    "start:dev": "NODE_ENV=development nodemon app.js --ignore client/",
-    "start:prod": "NODE_ENV=production node app.js"
+    "dev": "NODE_ENV=development nodemon app.js --ignore client/",
+    "start": "NODE_ENV=production node app.js"
   }
 }

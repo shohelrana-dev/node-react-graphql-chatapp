@@ -4,7 +4,9 @@ const {Message, User} = require("../../models");
 
 module.exports = {
     Message: {
-        createdAt: (parent) => parent.createdAt.toISOString()
+        createdAt: (parent) => {
+           return  parent.createdAt?.toISOString() || null
+        }
     },
     Reaction: {
         createdAt: (parent) => parent.createdAt.toISOString(),

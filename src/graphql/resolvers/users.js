@@ -9,7 +9,7 @@ module.exports = {
     Query: {
         getUsers: async (_, __, {currentUser}) => {
             try {
-                let sql = `Select users.*, (Select messages.id from messages where messages.from = users.username OR messages.to = users.username order by messages.createdAt desc limit 1) as lastMessage from users WHERE username != '${currentUser.username}' ORDER BY lastMessage DESC`;
+                let sql = `Select users.*, (Select messages.id from messages where (messages.from = users.username OR messages.to = users.username) && (messages.from = '${currentUser.username}' OR messages.to = '${currentUser.username}')  order by messages.createdAt desc limit 1) as lastMessage from users WHERE username != '${currentUser.username}' ORDER BY lastMessage DESC`;
                 let users = await db.sequelize.query(sql);
                 users = await Promise.all(users[0].map(async user=>{
                     if(user.lastMessage){
@@ -17,6 +17,7 @@ module.exports = {
                     }
                     return user;
                 }))
+
                 return users;
             } catch (err) {
                 console.log(err)
